@@ -26,7 +26,7 @@ Route::get('/', [\App\Http\Controllers\LandingPageController::class , 'index']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('dashboard')->group(function (){
     Route::resource('banner', BannerController::class);
@@ -34,7 +34,6 @@ Route::prefix('dashboard')->group(function (){
     Route::resource('iklan', IklanController::class);
     Route::resource('karier', KarierController::class);
     Route::resource('kategori-toko', KategoriTokoController::class);
-    Route::resource('logo', LogoController::class);
     Route::resource('popular-fitur', PopularFiturController::class);
     Route::resource('sosmed', SosmedController::class);
     Route::resource('tentang-kami', TentangKamiController::class);

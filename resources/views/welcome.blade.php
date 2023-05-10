@@ -60,7 +60,7 @@
     @if (count($populars) == 0)
     <p>Fitur tidak tersedia</p>
     @else
-    <div class="menu flex content-center mt-10 ml-32">
+    <div class="menu flex content-center mt-10 justify-center">
             @foreach ($populars as $row )
             <div class="mr-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="width:200px;">
                 <a href="#">
@@ -85,7 +85,7 @@
     @if (count($kategories) == 0)
     <p>FItur tidak tersedia</p>
     @else
-        <div class="cards-toko flex content-center mt-10 ml-10">
+        <div class="cards-toko flex content-center mt-10 justify-center">
                 @foreach ($kategories as $row)
                 <div class="mr-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="width:300px;">
                     <a href="#">
@@ -110,7 +110,7 @@
     @if (isset($map) == null)
         <p>Fitur Tidak Tersedia</p>
     @else
-    <div class="peta" style="margin-left:30%;">
+    <div class="peta flex justify-center">
         <img src="{{$map->map}}"
         alt="" class="img-fluid mt-3">
     </div>
@@ -121,7 +121,7 @@
 @if (isset($iklan) != null)
 <div class="iklan mt-32">
     @foreach ($iklan as $row)
-    <div class="peta" style="margin-left:25%;">
+    <div class="peta flex justify-center">
         <a href="">
             <img src="{{$row->iklan}}"
         alt="" class="img-fluid mt-3">
@@ -136,7 +136,7 @@
 <div class="tentang-kami mt-32 text-center">
     <h3 class="text-3xl font-bold">{{$tentang->title}}</h3>
     <p>{{$tentang->desc}}</p>
-    <div class="sosmed flex"  style="margin-left:48%;">
+    <div class="sosmed flex justify-center">
         @foreach ($sosmed as $row)
             <a href="">
                 <img src="{{$row->logo}}" alt="" height="30px" width="30px">
@@ -150,7 +150,7 @@
     <h3 class="text-3xl font-bold text-center">Temukan Karier Impianmu</h3>
     <p class="text-center">Mari bergabung bersama kami jadilah bagian dari kami dan kembangkan bakat, ide kreatifmu dalam GAS</p>
     @if (count($karier) != 0)
-    <div class="row-karier mb-5" style="margin-left:28%">
+    <div class="row-karier mb-5 flex justify-center">
         @foreach ($karier as $row)
         <div class="column-karier mb-4">
             <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
