@@ -1,4 +1,4 @@
-{{--
+
 <form method="post" action="{{route('banner.update',$row->id)}}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -44,4 +44,4 @@
     </div>
 </div>
 </form>
- --}}
+

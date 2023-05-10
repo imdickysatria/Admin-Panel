@@ -68,7 +68,9 @@ class BannerController extends Controller
      */
     public function edit(banner $banner)
     {
-        //
+        return view('banner.edit',[
+            'id_banner' => $banner
+        ]);
     }
 
     /**
