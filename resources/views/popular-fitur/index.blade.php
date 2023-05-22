@@ -46,8 +46,8 @@
                         {{$row->title}}
                     </td>
                     <td class="px-6 py-4">
-                        <div style="max-height: 250px; max-width: 400px; overflow:hidden;">
-                            <img src="{{$row->image}}"
+                        <div style="overflow:hidden;">
+                            <img src="{{$row->image}}" style="width: 150px" height="150px"
                             alt="{{ $row->title }}" class="img-fluid mt-3">
                         </div>
                     </td>

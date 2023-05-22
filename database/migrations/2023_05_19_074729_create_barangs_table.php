@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('popular_fiturs', function (Blueprint $table) {
+        Schema::create('barangs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('image');
+            $table->string('name');
+            $table->bigInteger('harga');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('popular_fiturs');
+        Schema::dropIfExists('barangs');
     }
 };

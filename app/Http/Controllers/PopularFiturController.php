@@ -14,7 +14,7 @@ class PopularFiturController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'verified']);
     }
 
     /**
@@ -24,6 +24,7 @@ class PopularFiturController extends Controller
      */
     public function index()
     {
+
         return view('popular-fitur.index',[
             'populars' => PopularFitur::all()
 
@@ -97,7 +98,6 @@ class PopularFiturController extends Controller
 
 
         $popularFitur->update($request->all());
-
             return redirect()->back()->with('success', ' Banner Berhasil diupdate');
     }
 

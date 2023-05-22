@@ -21,8 +21,8 @@
                 </div>
             @else
                 <div class="wrap mt-24 ml-20">
-                    <h1 class="text-4xl font-bold text-white" style="width:200px">{{$banner->title}}</h1>
-                    <p style="width:420px">{{$banner->desc}}</p>
+                    <h1 class="text-4xl font-bold text-white" style="width:250px">{{$banner->title}}</h1>
+                    <p class="mt-4" style="width:420px">{{$banner->desc}}</p>
                     <br>
                     <p>unduh</p>
                     <div class="google-play mb-20">
@@ -56,7 +56,7 @@
 
 <div class="popular-fitur mt-32 text-center">
     <h3 class="text-3xl font-bold">Popular Fitur</h3>
-    <p>Nikmati berbagai fitur yang kami berikan</p>
+    <p class="mt-5">Nikmati berbagai fitur yang kami berikan</p>
     @if (count($populars) == 0)
     <p>Fitur tidak tersedia</p>
     @else
@@ -80,7 +80,7 @@
 
 <div class="kategori-toko mt-32 text-center">
     <h3 class="text-3xl font-bold">Kategori Toko</h3>
-    <p>Apapun Jenis tokomu dapat bergabung bersama GAS</p>
+    <p class="mt-5">Apapun Jenis tokomu dapat bergabung bersama GAS</p>
 
     @if (count($kategories) == 0)
     <p>FItur tidak tersedia</p>
@@ -106,7 +106,7 @@
 
 <div class="map mt-32 text-center">
     <h3 class="text-3xl font-bold">Fitur Maps</h3>
-    <p>Aplikasi Gas akan membantumu dalam memantau stok produk tokomu dan menjangkau customer yang lebih luas</p>
+    <p class="mt-5">Aplikasi Gas akan membantumu dalam memantau stok produk tokomu dan menjangkau customer yang lebih luas</p>
     @if (isset($map) == null)
         <p>Fitur Tidak Tersedia</p>
     @else
@@ -135,8 +135,8 @@
 @if (isset($tentang) != null)
 <div class="tentang-kami mt-32 text-center">
     <h3 class="text-3xl font-bold">{{$tentang->title}}</h3>
-    <p>{{$tentang->desc}}</p>
-    <div class="sosmed flex justify-center">
+    <p class="w-4/5 ml-28 mt-5" >{{$tentang->desc}}</p>
+    <div class="sosmed flex justify-center mt-5">
         @foreach ($sosmed as $row)
             <a href="">
                 <img src="{{$row->logo}}" alt="" height="30px" width="30px">
@@ -148,26 +148,22 @@
 
 <div class="karier mt-32">
     <h3 class="text-3xl font-bold text-center">Temukan Karier Impianmu</h3>
-    <p class="text-center">Mari bergabung bersama kami jadilah bagian dari kami dan kembangkan bakat, ide kreatifmu dalam GAS</p>
+    <p class="text-center mt-5 mb-4">Mari bergabung bersama kami jadilah bagian dari kami dan kembangkan bakat, ide kreatifmu dalam GAS</p>
     @if (count($karier) != 0)
-    <div class="row-karier mb-5 flex justify-center">
-        @foreach ($karier as $row)
-        <div class="column-karier mb-4">
-            <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="{{$row->image}}" alt="">
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$row->title}}</h5>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$row->desc}}</p>
-
-                </div>
-                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    <div class="row-karier mb-5 grid grid-flow-row-dense grid-cols-2 ml-16">
+            @foreach ($karier as $row)
+            <div class="column-karier col-md-6 mb-3">
+                <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="{{$row->image}}" alt="">
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$row->title}}</h5>
+                        <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">{{$row->desc}}</p>
+                    </div>
                 </a>
-            </a>
-        </div>
-        @endforeach
+            </div>
+            @endforeach
     </div>
+
     @else
         <p class="text-center">Fitur Tidak Tersedia</p>
     @endif
